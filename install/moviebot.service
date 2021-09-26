@@ -1,0 +1,15 @@
+[Unit]
+Description=MovieBot Discord Bot servcie
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+User=pi
+Group=pi
+Environment=PYTHONPATH=/usr/bin/python3
+WorkingDirectory=/home/pi/MovieBot/
+ExecStart= python3 bot.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
